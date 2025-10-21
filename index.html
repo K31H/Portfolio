@@ -6,227 +6,192 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Edward Pawulski | Software Developer Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: "Poppins", sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding-top: 0;
-            /* Remove Bootstrap's automatic fixed-top padding */
-        }
-
-        header {
-            background: linear-gradient(#30ad45, #0a5e07);
-            color: white;
-            padding: 6rem 1rem;
-            text-align: center;
-            margin-top: 0;
-        }
-
-        .navbar-gradient {
-            background: linear-gradient(0deg, #30ad45, #0a5e07);
-            transition: background 0.3s ease;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        .card {
-            border: none;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        footer {
-            background-color: #0a5e07;
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-        }
-
-        .btn-custom {
-            background-color: white;
-            color: #0a5e07;
-            font-weight: 500;
-        }
-
-        .btn-custom:hover {
-            background-color: #f1f1f1;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark navbar-gradient fixed-top">
-        <div class="container">
-            <a id="navbarBrand" class="navbar-brand fw-bold d-none" href="#home">Edward Pawulski</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cv">CV</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#links">Profiles</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Header / Homepage -->
+    <!-- Full-Screen Header -->
     <header id="home">
-        <div class="container">
-            <h1 class="display-5 fw-bold">Edward Pawulski</h1>
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold">Edward Pawulski</h1>
             <p class="lead">Aspiring Software Developer | BSc (Hons) Computer Science (Data Science & AI)</p>
         </div>
     </header>
 
-    <!-- Projects Section -->
-    <section id="projects" class="bg-light">
+    <!-- Projects Section as Carousel -->
+    <section id="projects-skills" class="py-5 bg-light">
         <div class="container">
-            <h2 class="text-primary mb-4 text-center">Work Samples & Projects</h2>
-            <div class="row g-4">
+            <h2 class="text-center mb-5">Work Samples & Projects</h2>
 
-                <!-- Project 1 -->
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h5 class="fw-bold">Student Management System</h5>
-                        <p>A program to manage student records efficiently with add, update, and search features.</p>
-                        <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#studentMgmtDetails">
-                            Show More
-                        </button>
-                        <div class="collapse mt-2" id="studentMgmtDetails">
-                            <ul>
-                                <li><strong>Technologies:</strong> Java, OOP</li>
-                                <li><strong>Role:</strong> Lead developer – designed class structure and data handling
-                                </li>
-                                <li><strong>Skills Developed:</strong> Problem-solving, modular design, debugging</li>
-                            </ul>
+            <div id="projectsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+
+                    <!-- Project 1 -->
+                    <div class="carousel-item active">
+                        <div class="card shadow-lg mx-auto border-0" style="max-width: 500px;">
+                            <img src="img/budgeting.png" class="card-img-top" alt="Budgeting System Screenshot"
+                                loading="lazy">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-decoration-underline">Budgeting System</h5>
+                                <p class="card-text">Console-based Budgeting System with encryption for midterm
+                                    assignment.</p>
+                                <button class="btn btn-success" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#project1Details" aria-expanded="false"
+                                    aria-controls="project1Details">Read More</button>
+                                <div class="collapse mt-3" id="project1Details">
+                                    <ul class="list-group list-group-flush text-start">
+                                        <li><strong>Technologies:</strong> Java, OOP, File Editing</li>
+                                        <li><strong>Role:</strong> Lead Developer</li>
+                                        <li><strong>Skills:</strong> Problem-solving, debugging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="carousel-item">
+                        <div class="card shadow-lg mx-auto border-0" style="max-width: 500px;">
+                            <img src="img/scribble.png" class="card-img-top" alt="Scrabble Game Screenshot"
+                                loading="lazy">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-decoration-underline">Scrabble Game</h5>
+                                <p class="card-text">Console-based Scrabble game with scoring and tile management logic.
+                                </p>
+                                <button class="btn btn-info text-white" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#project2Details" aria-expanded="false"
+                                    aria-controls="project2Details">Read More</button>
+                                <div class="collapse mt-3" id="project2Details">
+                                    <ul class="list-group list-group-flush text-start">
+                                        <li><strong>Technologies:</strong> Java, OOP, Algorithms</li>
+                                        <li><strong>Role:</strong> Lead Developer</li>
+                                        <li><strong>Skills:</strong> Algorithm design, debugging</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="carousel-item">
+                        <div class="card shadow-lg mx-auto border-0" style="max-width: 500px;">
+                            <img src="img/diddykong.png" class="card-img-top" alt="Diddy Kong Racing Website Screenshot"
+                                loading="lazy">
+                            <div class="card-body text-center">
+                                <h5 class="card-title text-decoration-underline">Diddy Kong Racing Website</h5>
+                                <p class="card-text">Bootstrap website made for Web Design module.</p>
+                                <button class="btn btn-warning" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#project3Details" aria-expanded="false"
+                                    aria-controls="project3Details">Read More</button>
+                                <div class="collapse mt-3" id="project3Details">
+                                    <ul class="list-group list-group-flush text-start">
+                                        <li><strong>Technologies:</strong> HTML, CSS, Bootstrap 5</li>
+                                        <li><strong>Role:</strong> Co-developer & Designer</li>
+                                        <li><strong>Skills:</strong> Responsive design, UI/UX</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Project 2 -->
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h5 class="fw-bold">Scrabble Game</h5>
-                        <p>Console-based Scrabble game with scoring and tile management logic.</p>
-                        <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#scrabbleDetails">
-                            Show More
-                        </button>
-                        <div class="collapse mt-2" id="scrabbleDetails">
-                            <ul>
-                                <li><strong>Technologies:</strong> Java, OOP, Algorithms</li>
-                                <li><strong>Role:</strong> Lead developer</li>
-                                <li><strong>Skills Developed:</strong> Algorithm design, debugging, modular programming
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#projectsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#projectsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
 
-                <!-- Project 3 -->
-                <div class="col-md-4">
-                    <div class="card p-3">
-                        <h5 class="fw-bold">Portfolio Website</h5>
-                        <p>Interactive portfolio website showcasing my projects and skills.</p>
-                        <button class="btn btn-sm btn-primary" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#portfolioDetails">
-                            Show More
-                        </button>
-                        <div class="collapse mt-2" id="portfolioDetails">
-                            <ul>
-                                <li><strong>Technologies:</strong> HTML, CSS, Bootstrap 5</li>
-                                <li><strong>Role:</strong> Designer & Developer</li>
-                                <li><strong>Skills Developed:</strong> Responsive design, UI/UX, web deployment</li>
-                            </ul>
-                        </div>
-                    </div>
+                <!-- Carousel Indicators below cards -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="0"
+                        class="active"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#projectsCarousel" data-bs-slide-to="2"></button>
                 </div>
-
             </div>
-        </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-primary mb-4 text-center">Technical & Transferable Skills</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <h5 class="fw-bold">Technical Skills</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Programming Languages: Python, Java, C, C++</li>
-                        <li class="list-group-item">Concepts: OOP, Algorithms, Data Structures</li>
-                        <li class="list-group-item">Tools: GitHub, Version Control</li>
-                    </ul>
+            <div class="row g-4 justify-content-center">
+                <!-- Technical Skills Column -->
+                <div class="col-12 col-md-6 text-center">
+                    <h2 class="mb-4">Technical Skills</h2>
+                    <div class="row justify-content-center g-4">
+                        <figure class="col-4 col-sm-3 text-center">
+                            <img src="img/python.png" alt="Python" class="img-fluid mb-2 skill-icon">
+                            <figcaption>Python</figcaption>
+                        </figure>
+                        <figure class="col-4 col-sm-3 text-center">
+                            <img src="img/java.png" alt="Java" class="img-fluid mb-2 skill-icon">
+                            <figcaption>Java</figcaption>
+                        </figure>
+                        <figure class="col-4 col-sm-3 text-center">
+                            <img src="img/c_icon.png" alt="C" class="img-fluid mb-2 skill-icon">
+                            <figcaption>C</figcaption>
+                        </figure>
+                        <figure class="col-4 col-sm-3 text-center">
+                            <img src="img/cpp.png" alt="C++" class="img-fluid mb-2 skill-icon">
+                            <figcaption>C++</figcaption>
+                        </figure>
+                        <figure class="col-4 col-sm-3 text-center">
+                            <img src="img/github.png" alt="GitHub" class="img-fluid mb-2 skill-icon">
+                            <figcaption>GitHub</figcaption>
+                        </figure>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5 class="fw-bold">Transferable Skills</h5>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Teamwork – Collaborated on projects at university and in part-time
-                            roles.</li>
-                        <li class="list-group-item">Communication – Presented technical concepts clearly in coursework.
-                        </li>
-                        <li class="list-group-item">Problem Solving – Debugged and optimized algorithms in multiple
-                            projects.</li>
+
+                <!-- Transferable Skills Column -->
+                <div class="col-12 col-md-6 text-center">
+                    <h2 class="mb-4">Transferable Skills</h2>
+                    <ul class="list-group list-group-flush mx-auto" style="max-width: 400px;">
+                        <li class="list-group-item">Teamwork – collaborated on projects</li>
+                        <li class="list-group-item">Communication – presenting technical concepts</li>
+                        <li class="list-group-item">Problem Solving – debugging and optimization</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CV Section -->
-    <section id="cv" class="bg-light">
-        <div class="container text-center">
-            <h2 class="text-primary mb-3">Curriculum Vitae</h2>
-            <p>You can download my full CV below for a complete overview of my education, experience, and skills.</p>
-            <a href="EP_CV.pdf" class="btn btn-custom btn-lg" download>Download CV (PDF)</a>
-        </div>
-    </section>
-
-    <!-- Links Section -->
-    <section id="links">
-        <div class="container text-center">
-            <h2 class="text-primary mb-4">Professional Profiles</h2>
-            <p>Connect with me and explore more of my work through the links below:</p>
-            <div class="d-flex justify-content-center gap-3">
-                <a href="https://www.linkedin.com/in/edward-pawulski" target="_blank"
-                    class="btn btn-outline-primary">LinkedIn</a>
-                <a href="https://github.com/" target="_blank" class="btn btn-outline-dark">GitHub</a>
+    <section id="cv-profiles-footer" class="d-flex flex-column h-100">
+        <!-- CV/Profile Content -->
+        <div class="container flex-grow-1 d-flex align-items-center justify-content-center">
+            <div class="row g-4 justify-content-center w-100">
+                <div class="col-12 col-md-6 text-center">
+                    <h2>Curriculum Vitae</h2>
+                    <p>Download my full CV for a complete overview of education, experience, and skills.</p>
+                    <a href="EP_CV.pdf" class="btn btn-custom btn-lg" download>Download CV (PDF)</a>
+                </div>
+                <div class="col-12 col-md-6 text-center">
+                    <h2>Professional Profiles</h2>
+                    <p>Connect with me and explore more of my work:</p>
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="https://www.linkedin.com/in/edward-pawulski" target="_blank"
+                            class="btn btn-outline-primary">LinkedIn</a>
+                        <a href="https://github.com/K31H" target="_blank" class="btn btn-outline-dark">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
+
+        <!-- Footer -->
+        <div class="text-center py-3">
+            <p class="fw-bold mb-0">© Edward Pawulski 2025</p>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© Edward Pawulski 2025</p>
-    </footer>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Scroll Effect for Navbar Brand -->
-    <script>
-        const navbarBrand = document.getElementById('navbarBrand');
-        const header = document.querySelector('header');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > header.offsetHeight - 70) {
-                navbarBrand.classList.remove('d-none');
-            } else {
-                navbarBrand.classList.add('d-none');
-            }
-        });
-    </script>
-
 </body>
 
 </html>
