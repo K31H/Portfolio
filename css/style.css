@@ -6,13 +6,14 @@ body {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     font-family: "Poppins", sans-serif;
-    background-color: #f8f9fa;
     color: #212529;
+    background-color: #f8f9fa;
 }
 
 header,
 section {
-    height: 100vh;
+    min-height: 100vh;
+    /* allows sections to grow if content is taller */
     scroll-snap-align: start;
     display: flex;
     flex-direction: column;
@@ -20,66 +21,46 @@ section {
     align-items: center;
     text-align: center;
     box-sizing: border-box;
-    padding: 0;
+    padding: 0 1rem;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
-header {
-    background: linear-gradient(#30ad45, #0a5e07);
+.list-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center the list horizontally */
+    padding-left: 0;
+    /* remove extra padding */
+}
+
+.list-group-item {
+    width: auto;
+    /* shrink each item to fit content */
+    text-align: left;
+    /* bullets and text stay normal */
+}
+
+/* Header Section */
+header#home {
+    background: linear-gradient(180deg, #2A4D14, #317B22);
     color: white;
 }
 
-.card {
-    border: none;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-img-top {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 0;
-    display: block;
-    margin: 0;
-    padding: 0;
-}
-
-@media (min-width: 768px) {
-    .card-img-top {
-        height: 300px;
-    }
-}
-
-.btn-custom {
-    background-color: white;
-    color: #0a5e07;
-    font-weight: 500;
-}
-
-.btn-custom:hover {
-    background-color: #f1f1f1;
-}
-
-#projects-skills {
-    background-color: #f8f9fa;
+/* Projects Section */
+#projects {
+    background: linear-gradient(180deg, #317B22, #4CAE63);
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    /* reduced from 1.5rem */
     padding: 1rem 0;
-}
-
-#projects-skills h2 {
-    margin-bottom: 0.5rem;
-    /* reduce space below title */
 }
 
 #projectsCarousel {
@@ -93,10 +74,68 @@ header {
     align-items: center;
 }
 
-.carousel-item {
-    transition: transform 0.8s ease, opacity 0.8s ease-in-out;
+/* Skills Section */
+#skills {
+    background: linear-gradient(180deg, #4CAE63, #67E0A3);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
 }
 
+/* CV/Profile Section */
+#cv-profiles-footer {
+    background: linear-gradient(180deg, #67E0A3, #7CF0BD);
+    color: #212529;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+}
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card .btn {
+    background-color: #f1f3f5;
+    /* light gray */
+    color: #317B22;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid #317B22;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+    .card-img-top {
+        height: 300px;
+    }
+}
+
+
+/* Carousel Controls (Prev/Next) */
 .carousel-control-prev,
 .carousel-control-next {
     top: 50%;
@@ -104,40 +143,46 @@ header {
     position: absolute;
     width: 45px;
     height: 45px;
-    background-color: rgba(108, 117, 125, 0.4);
+    background-color: rgba(75, 85, 99, 0.6);
+    /* soft gray background */
     border-radius: 50%;
-    border: none;
-    transition: all 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
+
+/* Carousel Controls without background */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 45px;
+    height: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Keep the default Bootstrap arrows */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    filter: invert(1);
-    width: 20px;
-    height: 20px;
+    background-color: transparent;
+    /* remove any background */
+    width: 30px;
+    height: 30px;
 }
 
+/* Optional: slightly enlarge on hover */
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-    background-color: rgba(108, 117, 125, 0.7);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-control-prev:focus,
-.carousel-control-next:focus {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.3);
+    transform: translateY(-50%) scale(1.2);
 }
 
 .carousel-indicators {
+    margin-top: 1rem;
     display: flex;
     justify-content: center;
     gap: 0.6rem;
-    margin-top: 1rem;
-    padding: 0;
+    position: relative;
 }
 
 .carousel-indicators button {
@@ -145,40 +190,33 @@ header {
     height: 12px;
     border-radius: 50%;
     border: none;
-    background-color: rgba(108, 117, 125, 0.4) !important;
+    background-color: rgba(75, 85, 99, 0.6);
+    /* soft gray */
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.carousel-indicators button:hover {
-    background-color: rgba(108, 117, 125, 0.7) !important;
-    transform: scale(1.2);
-}
-
 .carousel-indicators button.active {
-    background-color: #6c757d !important;
+    background-color: #374151;
+    /* darker gray for active */
     transform: scale(1.3);
 }
 
-.skills-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 2rem;
-    width: 100%;
-    max-width: 1000px;
-    margin-top: 0.5rem;
-    /* reduced spacing */
+.carousel-indicators button:hover {
+    background-color: #4b5563;
+    /* slightly darker on hover */
 }
 
+/* Skills Section Grid */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 1.5rem;
-    flex: 1;
+    max-width: 1000px;
+    width: 100%;
 }
+
 
 .skill-icon {
     width: 70px;
@@ -198,53 +236,27 @@ header {
     font-size: 0.95rem;
 }
 
-.transferable-skills {
-    flex: 1;
-    text-align: left;
+.transferable-skills-card {}
+
+.cv-btn {
+    background-color: #317B22;
+    color: black;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border: 2px solid #317B22;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.transferable-skills .list-group-item {
-    background-color: transparent;
-    border: none;
-    font-size: 1rem;
-    padding: 0.5rem 0;
-    border-top: 1px solid #dee2e6;
+.cv-btn:hover {
+    background-color: #245c18;
+    /* slightly darker green on hover */
+    color: white;
+    /* optional: change text color on hover */
 }
 
-#cv-profiles-footer {
-    background-color: #f8f9fa;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-    box-sizing: border-box;
-}
-
-#cv-profiles-footer h2,
-#cv-profiles-footer p,
-#cv-profiles-footer a {
-    margin: 0.2rem 0;
-}
-
+/* Responsive */
 @media (max-width: 767px) {
-    #projectsCarousel .carousel-inner {
-        min-height: 500px;
-    }
-
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 40px;
-        height: 40px;
-    }
-
-    .skill-icon {
-        width: 60px;
-        height: 60px;
-    }
-
     .skills-section {
         flex-direction: column;
         align-items: center;
@@ -252,5 +264,10 @@ header {
 
     .transferable-skills {
         text-align: center;
+    }
+
+    .skill-icon {
+        width: 60px;
+        height: 60px;
     }
 }
